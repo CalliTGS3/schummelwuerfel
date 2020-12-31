@@ -49,34 +49,25 @@ function ZeigeAugen (AnzahlAugen: number) {
             `)
     }
 }
-input.onButtonPressed(Button.A, function () {
-    if (MinimumAugen == 1) {
-        MinimumAugen = 3
-        basic.showIcon(IconNames.Happy)
-        basic.pause(100)
-        basic.clearScreen()
-    } else {
-        MinimumAugen = 1
-        basic.showIcon(IconNames.Sad)
-        basic.pause(100)
-        basic.clearScreen()
-    }
-})
 let Augen = 0
 let Intervall = 0
 let MinimumAugen = 0
-let Austrudeln = 10
-MinimumAugen = 1
+let Austrudeln = 5
 basic.forever(function () {
     if (input.isGesture(Gesture.TiltLeft)) {
+        if (input.buttonIsPressed(Button.A)) {
+            MinimumAugen = 4
+        } else {
+            MinimumAugen = 1
+        }
         basic.turnRgbLedOff()
         basic.showIcon(IconNames.Chessboard)
         basic.pause(100)
         basic.clearScreen()
-        Intervall = 2 ** Austrudeln
-        for (let index = 0; index < Austrudeln; index++) {
-            Intervall = Intervall / 2
-            if (Intervall == 1) {
+        Intervall = 10
+        for (let Index = 0; Index <= Austrudeln; Index++) {
+            Intervall = Intervall * 2
+            if (Index == Austrudeln) {
                 Augen = randint(MinimumAugen, 6)
                 basic.setLedColor(0x00ff00)
             } else {
