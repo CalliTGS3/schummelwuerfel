@@ -1,7 +1,7 @@
 # Schummelwürfel
 
 
-## Schritt 1
+## Schritt 1 @fullscreen
 
 Die Hauptschleife: Immer wenn der @boardname@ nach links geneigt wird, fängt die Berechnung an.
 
@@ -16,9 +16,9 @@ basic.forever(function () {
 ```
 
 
-## Schritt 2
+## Schritt 2 @fullscreen
 
-Erstelle eine Funktion ZeigeAugen mit einem numerischen Parameter "Augen".
+Erstelle eine Funktion ZeigeAugen mit einem numerischen Parameter "AnzahlAugen".
 
 ```blocks
 function ZeigeAugen (AnzahlAugen: number) {
