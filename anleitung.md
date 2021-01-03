@@ -2,19 +2,20 @@
 
 ## ~avatar avatar @unplugged
 
-Dein @boardname@ hat einen eingebauten Sensor, der die Lage und die Bewegung feststellen kann kann. Damit kann man feststellen, 
-ob der @boardname@ gedreht ist, im freien Fall ist oder geschüttelt wird. Wir benutzen in unserem würfelprogramm diesen Sensor,
-um das Schütteln auszuwerten, was dem Schütteln eines richtigen Würfels entspricht. Das zufällige "Würfeln" einer Zahl zwischen 1 und 6
-übernimmt unser @boardname@, das ist ganz leicht für ihn. Die Augen zeigen wir auf der 5x5 LED Matrix des @boardname@ an.
-Wir wollen ja besser sein als unsere Mitspieler und sind clevere Programmierer und so programmieren wir den @boardname@ natürlich zu unserem Vorteil!
+Dein @boardname@ hat einen eingebauten Sensor, der die Lage und die Bewegung feststellen kann kann. Damit kann man prüfen, 
+ob der @boardname@ gedreht ist, im freien Fall ist oder geschüttelt wird. Wir benutzen in unserem Würfelprogramm diesen Sensor,
+um das "Nach links neigen" auszuwerten, damit wird der Vorgang des Würfelns ausgelöst. Das zufällige "Würfeln" einer Zahl zwischen 1 und 6
+übernimmt unser @boardname@, das ist ganz leicht für ihn. Die gewürfelten Augen zeigen wir auf der 5x5 LED Matrix des @boardname@ an.
+Wir wollen besser sein als unsere Mitspieler, sind clevere Programmierer und so programmieren wir den @boardname@ natürlich zu unserem Vorteil!
 Deshalb heisst das Programm auch **"Schummelwürfel"**.
 
 
 ## Schritt 1 @fullscreen
 
-Die Hauptschleife: Immer wenn der @boardname@ nach links geneigt wird, zeigt der @boardname@ für 100 ms ein Schachbrettmuster
-auf der 5x5 Matrix LED an und danach "denkt" sich der @boardname@ eine zufällige Zahl zwischen 1 und 6 aus. Dazu benutzt Du 
-den Block ``||Math:wähle eine zufällige Zahl von .. bis ..||`` und speicherst diesen Wert in die Variable ``||Variables:Augen||``. 
+Die Hauptschleife unseres Programmes fragt den Lagesensor ab: Immer wenn der @boardname@ nach links geneigt wird, zeigt der @boardname@ für 100 ms ein Schachbrettmuster
+auf der 5x5 Matrix LED an und danach "denkt" sich der @boardname@ eine zufällige Zahl zwischen 1 und 6 aus. Plaziere dazu den Block 
+``||Input:Bewegung nach links neigen||`` als Bedingung in der ``||Basic:dauerhaft||`` Hauptschleife des Programmes.
+Mit den Blöcken ``||Basic:zeige Symbol||`` und ``||Basic:pausiere||`` signalisierst Du den Start des Würfelns. Mit dem Block ``||Math:wähle eine zufällige Zahl von .. bis ..||`` speicherst Du diesen Wert in die Variable ``||Variables:Augen||``. 
 
 ```blocks
 basic.forever(function () {
@@ -71,11 +72,11 @@ basic.forever(function () {
 
 ## Schritt 3
 
-Jetzt kommt die Schummelfunktion: Das Schummeln besteht darin, daß unser Würfel eine höhere Augenzahl würfelt, wenn Du dran bist.
+Jetzt kommt die Schummelfunktion: Das Schummeln besteht darin, daß unser Würfel eine höhere Augenzahl würfeln kann, wenn Du dran bist.
 Dazu programmieren wir den @boardname@ mit einer geheimen Funktion! Wir wollen, daß nur dann die Schummelei wirksam ist, 
-wenn wir beim Würfeln gleichzeitig die Taste A des @boardname@ drücken. Wir dürfen das natürlich keinem Mitspieler verraten!!  
-Dann soll die Zufallsfunktion nicht mehr einen Wert zwischen 1 und 6 berechnen, sondern zum Beispiel einen Wert zwischen 4 und 6. 
-Wir machen das so, damit das Ganze nicht zu offensichtlich ist, wenn wir immer eine 6 würfeln. 
+wenn wir beim "Nach links neigen" gleichzeitig die Taste A des @boardname@ drücken. Wir dürfen das natürlich keinem Mitspieler verraten!!  
+Dann soll die Zufallsfunktion nicht mehr einen Wert zwischen 1 und 6 berechnen, sondern einen Wert zwischen 4 und 6. 
+Wir machen das mit dem Bereich von 4 bis 6 so, damit das Ganze nicht zu offensichtlich ist, als wenn wir immer eine 6 würfeln. 
 
 
 ## Schritt 4 @fullscreen
