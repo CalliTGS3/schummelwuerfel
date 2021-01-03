@@ -1,5 +1,14 @@
 # Schummelwürfel
 
+## ~avatar avatar @unplugged
+
+Dein @boardname@ hat einen eingebauten Sensor, der die Lage und die Bewegung feststellen kann kann. Damit kann man feststellen, 
+ob der @boardname@ gedreht ist, im freien Fall ist oder geschüttelt wird. Wir benutzen in unserem würfelprogramm diesen Sensor,
+um das Schütteln auszuwerten, was dem Schütteln eines richtigen Würfels entspricht. Das zufällige "Würfeln" einer Zahl zwischen 1 und 6
+übernimmt unser @boardname@, das ist ganz leicht für ihn. Die Augen zeigen wir auf der 5x5 LED Matrix des @boardname@ an.
+Wir wollen ja besser sein als unsere Mitspieler und sind clevere Programmierer und so programmieren wir den @boardname@ natürlich zu unserem Vorteil!
+Deshalb heisst das Programm auch **"Schummelwürfel"**.
+
 
 ## Schritt 1 @fullscreen
 
@@ -94,5 +103,23 @@ basic.forever(function () {
 })
 ```
 
+
+## Schritt 5 @fullscreen
+
+Schliesse Deinen @boardname@ mit einem USB Kabel an und drücke auf ``|Herunterladen|``. Speichere Dein Programm auf dem Laufwerk **@drivename@**. 
+Damit wird Dein Programm zum @boardname@ übertragen.
+
+
+## Schritt 6
+
+Gut gemacht! Du hast einen elektronischen Würfel für den @boardname@ programmiert.
+Verlasse diese Anleitung, indem Du auf ``|Fertigstellen|`` klickst. 
+
+
+## ~ @unplugged
+Im Hauptmenü von makecode findest Du den Menüpunkt ``|Teilen|``. 
+Klicke darauf, Du siehst anschließend ein Fenster in der Mitte mit dem Namen des Projektes. 
+Klicke auf die Schaltfläche ``|Projekt veröffentlichen|`` und dann auf ``|Link|`` kopieren. 
+Danach kannst Du diesen Link in der Schulcloud als Lösung zu der Aufgabe eintragen.
 
 
